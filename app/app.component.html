@@ -1,0 +1,24 @@
+<h1>ngx-filter-pipe</h1>
+
+<div>
+  <input type="text" [(ngModel)]="userFilter.name" placeholder="Type to filter by name">
+
+  <ul>
+    <li *ngFor="let user of users | filterBy: userFilter">
+      {{ user.name }}
+    </li>
+    
+    <!-- in case you want to show empty message -->
+    <li *ngIf="(users | filterBy: userFilter).length === 0">
+      No matching elements
+    </li>
+  </ul>
+  <select [(ngModel)]="s" >
+    <option *ngFor="let user of userss" [value]="user.id">{{user.name}}</option>
+  </select>
+  <select >
+    <option *ngFor="let user of users | filterBy: {id:demo}">{{user.name}}</option>
+  </select>
+  <p>{{s}}</p>
+  <p>{{userFilter.name}}</p>
+</div>
