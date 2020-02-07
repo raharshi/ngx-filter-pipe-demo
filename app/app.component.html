@@ -17,7 +17,7 @@
     <option *ngFor="let user of userss" [value]="user.id">{{user.name}}</option>
   </select>
   <select >
-    <option *ngFor="let user of users | filterBy: {id:demo}">{{user.name}}</option>
+    <option *ngFor="let user of users | filterBy: {id:s}">{{user.name}}</option>
   </select>
   <p>{{s}}</p>
   <p>{{userFilter.name}}</p>
